@@ -1,0 +1,97 @@
+﻿<Application x:Class="Tema3.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Tema3"
+             xmlns:viewmodels="clr-namespace:Tema3.ViewModels"
+             xmlns:views="clr-namespace:Tema3.Views"
+             StartupUri="Views/MainViews/MainView.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type viewmodels:LoginVM}">
+            <views:LoginView></views:LoginView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:MainVM}">
+            <views:MainView></views:MainView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:AdminVM}">
+            <views:AdminView></views:AdminView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:StudentVM}">
+            <views:StudentView></views:StudentView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:TeacherVM}">
+            <views:TeacherView></views:TeacherView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:StudentAdminVM}">
+            <views:StudentAdminView></views:StudentAdminView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:TeacherAdminVM}">
+            <views:TeacherAdminView></views:TeacherAdminView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:SubjectAdminVM}">
+            <views:SubjectAdminView></views:SubjectAdminView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:EditAdminVM}">
+            <views:EditAdminView></views:EditAdminView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:SubjectYearSpecializationVM}">
+            <views:SubjectYearSpecializationView></views:SubjectYearSpecializationView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:TeacherSubjectClassVM}">
+            <views:TeacherSubjectClassView></views:TeacherSubjectClassView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:StudentClassVM}">
+            <views:StudentClassView></views:StudentClassView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:TeacherMenuVM}">
+            <views:TeacherMenuView></views:TeacherMenuView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:HeadTeacherMenuVM}">
+            <views:HeadTeacherMenuView></views:HeadTeacherMenuView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:TeacherMenuAttendanceVM}">
+            <views:TeacherMenuAttendanceView></views:TeacherMenuAttendanceView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:TeacherMenuGradesVM}">
+            <views:TeacherMenuGradesView></views:TeacherMenuGradesView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:TeacherMenuLearningMaterialsVM}">
+            <views:TeacherMenuLearningMaterialsView></views:TeacherMenuLearningMaterialsView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:TeacherMenuMeanVM}">
+            <views:TeacherMenuMeanView></views:TeacherMenuMeanView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:HeadTeacherAbsencesVM}">
+            <views:HeadTeacherAbsencesView></views:HeadTeacherAbsencesView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:HeadTeacherAttendanceVM}">
+            <views:HeadTeacherAttendanceView></views:HeadTeacherAttendanceView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:HeadTeacherExpelVM}">
+            <views:HeadTeacherExpelView></views:HeadTeacherExpelView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:HeadTeacherFailedVM}">
+            <views:HeadTeacherFailedView></views:HeadTeacherFailedView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:HeadTeacherRepeaterVM}">
+            <views:HeadTeacherRepeaterView></views:HeadTeacherRepeaterView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:HeadTeacherGeneralAveragesVM}">
+            <views:HeadTeacherGeneralAveragesView></views:HeadTeacherGeneralAveragesView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:HeadTeacherHierarchyVM}">
+            <views:HeadTeacherHierarchyView></views:HeadTeacherHierarchyView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:StudentAbsencesVM}">
+            <views:StudentAbsencesView></views:StudentAbsencesView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:StudentGradesVM}">
+            <views:StudentGradesView></views:StudentGradesView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:StudentLearningMaterialsVM}">
+            <views:StudentLearningMaterialsView></views:StudentLearningMaterialsView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:StudentFinalGradesVM}">
+            <views:StudentFinalGradesView></views:StudentFinalGradesView>
+        </DataTemplate>
+    </Application.Resources>
+</Application>

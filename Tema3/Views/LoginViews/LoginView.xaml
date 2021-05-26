@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="Tema3.Views.LoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tema3.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding UserNameLabel}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"></TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="2" Text="{Binding PasswordLabel}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"></TextBlock>
+        
+        <TextBox Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Margin="0 15" Text="{Binding UserNameContent}"></TextBox>
+        <PasswordBox x:Name="textPassword" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Margin="0 15"></PasswordBox>
+
+        <Button Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" Margin="0 10" Content="{Binding LoginButtonLabel}" Command="{Binding LoginCommand}"
+                 CommandParameter="{Binding ElementName=textPassword}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Button>
+    </Grid>
+</UserControl>

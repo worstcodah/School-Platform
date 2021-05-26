@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="Tema3.Views.SubjectYearSpecializationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tema3.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Content="Subject" Grid.Row="2" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Year" Grid.Row="3" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Specialization" Grid.Row="4" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Is Thesis" Grid.Row="5" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Semester" Grid.Row="6" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding SubjectCollection}" Margin="15 15" 
+                  SelectedItem="{Binding SelectedSubject}"/>
+        <ComboBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding YearCollection}" Margin="15 15" 
+                  SelectedItem="{Binding SelectedYear}"/>
+        <ComboBox Grid.Row="4" Grid.Column="1" ItemsSource="{Binding SpecializationCollection}" Margin="15 15" 
+                  SelectedItem="{Binding SelectedSpecialization}"/>
+        <ComboBox Grid.Row="5" Grid.Column="1" ItemsSource="{Binding ThesisChoices}" Margin="15 15" 
+                  SelectedItem="{Binding SelectedThesisChoice}"/>
+        <ComboBox Grid.Row="6" Grid.Column="1" ItemsSource="{Binding SemesterCollection}" Margin="15 15" 
+                  SelectedItem="{Binding SelectedSemester}"/>
+        <Button Grid.Row="7" Grid.Column="1" Margin="20 20" Content="Link Together" Command="{Binding LinkFieldsCommand}"/>
+        <DataGrid  Grid.Row="2" Grid.Column="4" Grid.RowSpan="4" Grid.ColumnSpan="3" AutoGenerateColumns="False" Margin=" 0 0 0 30"
+                  ItemsSource="{Binding SubjectYearSpecializationCollection}" CanUserAddRows="False" 
+                   CanUserReorderColumns="False" CanUserDeleteRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Sub Id"  Binding="{Binding IdSubject}" IsReadOnly="False" Width="60"/>
+                <DataGridTextColumn Header="Year Id" Binding="{Binding IdYear}" IsReadOnly="False" Width="60"/>
+                <DataGridTextColumn Header="Spec Id" Binding="{Binding IdSpecialization}" IsReadOnly="False" Width="60"/>
+                <DataGridTextColumn Header="Sub Name" Binding="{Binding SubjectName}" IsReadOnly="False" Width="60"/>
+                <DataGridTextColumn Header="Year Name" Binding="{Binding YearName}" IsReadOnly="False" Width="60"/>
+                <DataGridTextColumn Header="Spec Name" Binding="{Binding SpecializationName}" IsReadOnly="False" Width="60"/>
+                <DataGridTextColumn Header="Is Thesis" Binding="{Binding IsThesis}" IsReadOnly="False" Width="60"/>
+                <DataGridTextColumn Header="Semester" Binding="{Binding SemesterName}" IsReadOnly="False" Width="60"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+    </Grid>
+</UserControl>

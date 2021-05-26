@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="Tema3.Views.StudentClassView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tema3.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Content="Selected Class' HT: " Grid.Row="1" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBlock Text="{Binding SelectedClassHeadTeacher}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Content="Class" Grid.Row="2" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding ClassCollection}" Margin="15 15" 
+                  SelectedItem="{Binding SelectedClass}" IsSynchronizedWithCurrentItem="True"/>
+        <Label Content="HeadTeacher" Grid.Row="3" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <ComboBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding TeacherCollection}" Margin="15 15" 
+                  SelectedItem="{Binding SelectedTeacher}"/>
+        <Button Grid.Row="6" Grid.Column="1" Margin="20 20" Content="Link Together" Command="{Binding LinkFieldsCommand}"/>
+        <Button Grid.Row="6" Grid.Column="5" Margin="20 20" Grid.ColumnSpan="2"  Content="Remove from class (marked students)" Command="{Binding RemoveFromClassCommand}" 
+                CommandParameter="{Binding ElementName=dataGrid}"/>
+        <DataGrid  x:Name="dataGrid" Grid.Row="2" Grid.Column="4" Grid.RowSpan="4" Grid.ColumnSpan="3" AutoGenerateColumns="False" Margin=" 0 0 0 30"
+                  ItemsSource="{Binding StudentCollection}" CanUserAddRows="False" 
+                   CanUserReorderColumns="False" CanUserDeleteRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Student Id"  Binding="{Binding Id}" IsReadOnly="False" Width="125"/>
+                <DataGridTextColumn Header="Student Name" Binding="{Binding Name}" IsReadOnly="False" Width="125"/>
+                <DataGridTextColumn Header="Class Id" Binding="{Binding IdClass}" IsReadOnly="False" Width="125"/>
+                <DataGridCheckBoxColumn Header="Remove from class" Width="125"/>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="Tema3.Views.TeacherMenuAttendanceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Tema3.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ComboBox Grid.Row="4" Grid.Column="0" ItemsSource="{Binding SubjectClassCollection}" Margin="15 15" 
+                 SelectedItem="{Binding SelectedSubjectClass}" />
+        <ComboBox Grid.Row="5" Grid.Column="0" ItemsSource="{Binding StudentCollection}" Margin="15 15" 
+                 SelectedItem="{Binding SelectedStudent}" />
+        <Button Content="Mark as absent" Command="{Binding MarkAbsenceCommand}" Grid.Row="8" Margin="15 15"/>
+        <ComboBox Grid.Row="7" Grid.Column="0" ItemsSource="{Binding SemesterCollection}" Margin="15 15" 
+                 SelectedItem="{Binding SelectedSemester}" />
+        <TextBox Grid.Row="6" Grid.Column="0" Text="{Binding AbsenceDate}" Margin="15 15"/>
+        <DataGrid x:Name="dataGrid" Grid.Row="4" Grid.Column="2" Grid.RowSpan="4" Grid.ColumnSpan="5" AutoGenerateColumns="False" Margin=" 0 0 0 30"
+                  ItemsSource="{Binding AbsenceCollection}" CanUserAddRows="False" CanUserReorderColumns="False" CanUserDeleteRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True" Width="60"/>
+                <DataGridTextColumn Header="Student Id" Binding="{Binding IdStudent}" IsReadOnly="True" Width="60"/>
+                <DataGridTextColumn Header="Student Name" Binding="{Binding StudentName}" IsReadOnly="True" Width="60"/>
+                <DataGridTextColumn Header="Class Id" Binding="{Binding IdClass}" IsReadOnly="True" Width="60"/>
+                <DataGridTextColumn Header="Class Name" Binding="{Binding ClassName}" IsReadOnly="True" Width="80"/>
+                <DataGridTextColumn Header="Spec Id" Binding="{Binding IdSpecialization}" IsReadOnly="True" Width="80"/>
+                <DataGridTextColumn Header="Spec Name" Binding="{Binding SpecializationName}" IsReadOnly="True" Width="80"/>
+                <DataGridTextColumn Header="Year Id" Binding="{Binding IdYear}" IsReadOnly="True" Width="80"/>
+                <DataGridTextColumn Header="Year Name" Binding="{Binding YearName}" IsReadOnly="True" Width="80"/>
+                <DataGridTextColumn Header="Subject Id" Binding="{Binding IdSubject}" IsReadOnly="True" Width="80"/>
+                <DataGridTextColumn Header="Subject Name" Binding="{Binding SubjectName}" IsReadOnly="True" Width="80"/>
+                <DataGridTextColumn Header="IsMotivated" Binding="{Binding IsMotivated}" IsReadOnly="True" Width="80"/>
+                <DataGridTextColumn Header="Date" Binding="{Binding Date}" IsReadOnly="True" Width="80"/>
+                <DataGridTextColumn Header="Semester" Binding="{Binding IdSemester}" IsReadOnly="True" Width="80"/>
+                <DataGridCheckBoxColumn Header="Motivate" IsReadOnly="False" Width="70"/>
+            </DataGrid.Columns>
+            
+        </DataGrid>
+        <Button Content="Motivate selected" Grid.Row="8" Grid.Column="4" Margin="10 10" Command="{Binding MotivateAbsencesCommand}" CommandParameter="{Binding ElementName=dataGrid}"/>
+    </Grid>
+</UserControl>
